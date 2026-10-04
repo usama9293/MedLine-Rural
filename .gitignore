@@ -1,0 +1,36 @@
+# Local credentials and configuration
+.env
+.env.*
+!.env.example
+config/db.local.php
+config/*local*.php
+config/*.local.*
+
+# Session data
+cookies.txt
+cookies_clinic.txt
+
+# Editor and operating system files
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs, temporary files, and local database artifacts
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.sql.gz
+*.sql.zip
+database/*dump*.sql
+database/*backup*.sql
+database/*local*.sql

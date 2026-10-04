@@ -1,0 +1,5 @@
+# Disable directory browsing
+Options -Indexes
+
+# Set application entry point
+DirectoryIndex frontend/login.php index.php index.html

@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>MedLine Rural — ICT907 Assessment 3</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* =========================================================
+   A1 PAGE SETUP
+   ========================================================= */
+
+@page {
+    size: 594mm 841mm;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #dfe5e9;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #17324d;
+}
+
+/* Exact A1 portrait */
+.poster {
+    width: 594mm;
+    height: 841mm;
+    margin: 0 auto;
+    background: #f8fbfc;
+    overflow: hidden;
+    position: relative;
+}
+
+/* =========================================================
+   COLOR SYSTEM
+   ========================================================= */
+
+:root {
+    --navy: #123b5d;
+    --blue: #1769aa;
+    --teal: #008c95;
+    --green: #2b9b72;
+    --light-blue: #eaf5fa;
+    --light-teal: #e9f7f6;
+    --light-green: #eaf7f0;
+    --border: #c9dce5;
+    --text: #17324d;
+    --muted: #587184;
+    --white: #ffffff;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    height: 120mm;
+    padding: 12mm 18mm 10mm;
+    background:
+        linear-gradient(135deg, #ffffff 0%, #eef8fb 55%, #e5f5f1 100%);
+    border-bottom: 2mm solid var(--teal);
+    position: relative;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.header-left {
+    width: 70%;
+}
+
+.project-label {
+    display: inline-block;
+    font-size: 5.5mm;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 3mm;
+}
+
+.title {
+    font-size: 22mm;
+    line-height: 0.95;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: var(--navy);
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 8mm;
+    font-weight: 500;
+    color: var(--teal);
+    margin-top: 5mm;
+}
+
+.assessment {
+    margin-top: 4mm;
+    font-size: 4.5mm;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.header-badge {
+    width: 43mm;
+    height: 43mm;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--teal));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 6mm;
+    line-height: 1.15;
+    font-weight: 800;
+    box-shadow: 0 3mm 7mm rgba(18,59,93,.18);
+}
+
+/* =========================================================
+   MEMBERS
+   ========================================================= */
+
+.members {
+    margin-top: 8mm;
+    padding-top: 5mm;
+    border-top: 0.5mm solid var(--border);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5mm 8mm;
+}
+
+.member {
+    font-size: 3.7mm;
+    color: var(--text);
+    line-height: 1.35;
+}
+
+.member strong {
+    color: var(--navy);
+}
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.main {
+    padding: 8mm 12mm 8mm;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6mm;
+}
+
+/* =========================================================
+   COLUMN
+   ========================================================= */
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 5mm;
+}
+
+/* =========================================================
+   SECTION CARD
+   ========================================================= */
+
+.section {
+    background: var(--white);
+    border: 0.4mm solid var(--border);
+    border-radius: 3mm;
+    padding: 5mm;
+    box-shadow: 0 1.5mm 4mm rgba(20,55,75,.06);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    color: var(--navy);
+    font-size: 6mm;
+    font-weight: 900;
+    margin-bottom: 3.5mm;
+    line-height: 1.1;
+}
+
+.section-number {
+    min-width: 9mm;
+    height: 9mm;
+    border-radius: 2mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blue);
+    color: white;
+    font-size: 4.5mm;
+    font-weight: 800;
+}
+
+.subheading {
+    color: var(--teal);
+    font-size: 3.9mm;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    margin: 3mm 0 1.5mm;
+}
+
+.text {
+    font-size: 3.35mm;
+    line-height: 1.45;
+    color: var(--text);
+    margin: 0;
+}
+
+.small {
+    font-size: 3mm;
+    line-height: 1.4;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+/* =========================================================
+   LISTS
+   ========================================================= */
+
+.list {
+    margin: 2mm 0 0;
+    padding-left: 5mm;
+}
+
+.list li {
+    font-size: 3.2mm;
+    line-height: 1.4;
+    margin-bottom: 1mm;
+}
+
+/* =========================================================
+   SCOPE TAGS
+   ========================================================= */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5mm;
+    margin-top: 2mm;
+}
+
+.tag {
+    background: var(--light-blue);
+    border: 0.3mm solid #c8e3ef;
+    color: var(--navy);
+    border-radius: 10mm;
+    padding: 1.5mm 2.5mm;
+    font-size: 2.8mm;
+    font-weight: 700;
+}
+
+/* =========================================================
+   GOALS TABLE
+   ========================================================= */
+
+.table-wrap {
+    overflow: hidden;
+    border: 0.3mm solid var(--border);
+    border-radius: 2mm;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th {
+    background: var(--navy);
+    color: white;
+    font-size: 2.65mm;
+    text-align: left;
+    padding: 2mm;
+    line-height: 1.2;
+}
+
+td {
+    border-top: 0.3mm solid var(--border);
+    padding: 2mm;
+    vertical-align: top;
+    font-size: 2.65mm;
+    line-height: 1.3;
+}
+
+.status {
+    display: inline-block;
+    padding: 1mm 1.5mm;
+    border-radius: 1.5mm;
+    font-size: 2.4mm;
+    font-weight: 800;
+    background: var(--light-green);
+    color: #16704e;
+}
+
+/* =========================================================
+   WORKFLOW
+   ========================================================= */
+
+.workflow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2mm;
+}
+
+.workflow-step {
+    width: 85%;
+    padding: 2.3mm;
+    text-align: center;
+    background: var(--light-blue);
+    border: 0.4mm solid #bcdde9;
+    border-radius: 2mm;
+    font-size: 3mm;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.workflow-step.alert {
+    background: #fff4e8;
+    border-color: #f1c997;
+    color: #9a5812;
+}
+
+.workflow-arrow {
+    height: 4mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    font-size: 4mm;
+    font-weight: 900;
+}
+
+/* =========================================================
+   TRIAGE FORMULA
+   ========================================================= */
+
+.formula-box {
+    background: linear-gradient(135deg, #edf8fa, #edf8f2);
+    border: 0.5mm solid #a9d9d4;
+    border-radius: 3mm;
+    padding: 5mm;
+    text-align: center;
+    margin-top: 3mm;
+}
+
+.formula-title {
+    font-size: 3.4mm;
+    font-weight: 800;
+    color: var(--teal);
+    margin-bottom: 2mm;
+}
+
+.formula {
+    font-size: 4.2mm;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.5;
+}
+
+/* =========================================================
+   ARCHITECTURE
+   ========================================================= */
+
+.architecture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5mm;
+    margin-top: 3mm;
+}
+
+.arch-box {
+    width: 82%;
+    padding: 2.4mm;
+    border-radius: 2mm;
+    text-align: center;
+    font-size: 2.8mm;
+    font-weight: 800;
+    border: 0.4mm solid;
+}
+
+.arch-users {
+    background: #edf5fb;
+    border-color: #a8cfe4;
+    color: var(--navy);
+}
+
+.arch-front {
+    background: #eaf8f7;
+    border-color: #a9d8d3;
+    color: #087477;
+}
+
+.arch-api {
+    background: #eef4fb;
+    border-color: #b8cee7;
+    color: #23527b;
+}
+
+.arch-logic {
+    background: #f0f8f1;
+    border-color: #b9dbbf;
+    color: #247046;
+}
+
+.arch-db {
+    background: #f5f2fb;
+    border-color: #cec3e6;
+    color: #5b427f;
+}
+
+.arch-arrow {
+    color: var(--teal);
+    font-weight: 900;
+    font-size: 3.5mm;
+}
+
+/* =========================================================
+   TELEMETRY FLOW
+   ========================================================= */
+
+.telemetry {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2mm;
+    margin-top: 3mm;
+}
+
+.telemetry-box {
+    padding: 2.5mm;
+    text-align: center;
+    background: var(--light-teal);
+    border: 0.3mm solid #b8ded9;
+    border-radius: 2mm;
+    font-size: 2.8mm;
+    font-weight: 700;
+}
+
+/* =========================================================
+   SECURITY
+   ========================================================= */
+
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5mm;
+    margin-top: 3mm;
+}
+
+.security-item {
+    background: #f3f8fb;
+    border-left: 1mm solid var(--blue);
+    padding: 2mm;
+    font-size: 2.75mm;
+    font-weight: 700;
+}
+
+/* =========================================================
+   TECHNOLOGY
+   ========================================================= */
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5mm;
+    margin-top: 3mm;
+}
+
+.tech {
+    background: var(--light-blue);
+    padding: 2mm;
+    text-align: center;
+    border-radius: 1.5mm;
+    font-size: 2.7mm;
+    font-weight: 700;
+}
+
+/* =========================================================
+   EVIDENCE SCREENSHOTS
+   ========================================================= */
+
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3mm;
+    margin-top: 3mm;
+}
+
+.evidence {
+    border: 0.4mm solid var(--border);
+    border-radius: 2mm;
+    overflow: hidden;
+    background: #f5f7f8;
+}
+
+.evidence img {
+    width: 100%;
+    height: 39mm;
+    object-fit: cover;
+    display: block;
+}
+
+.evidence-placeholder {
+    height: 39mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4mm;
+    color: var(--muted);
+    font-size: 2.8mm;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #f3f6f7,
+            #f3f6f7 3mm,
+            #e9eef0 3mm,
+            #e9eef0 6mm
+        );
+}
+
+.caption {
+    padding: 2mm;
+    font-size: 2.5mm;
+    line-height: 1.25;
+    color: var(--text);
+    font-weight: 700;
+}
+
+/* =========================================================
+   TESTING
+   ========================================================= */
+
+.test-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5mm;
+    margin-top: 3mm;
+}
+
+.test {
+    padding: 2mm;
+    border-radius: 1.5mm;
+    background: var(--light-green);
+    color: #206b4d;
+    font-size: 2.6mm;
+    font-weight: 800;
+    text-align: center;
+}
+
+/* =========================================================
+   RESULT BOX
+   ========================================================= */
+
+.result-box {
+    background: linear-gradient(135deg, #123b5d, #008c95);
+    color: white;
+    border-radius: 3mm;
+    padding: 4mm;
+    margin-top: 3mm;
+}
+
+.result-title {
+    font-size: 3.4mm;
+    font-weight: 900;
+    margin-bottom: 2mm;
+}
+
+.result-box p {
+    margin: 0;
+    font-size: 3mm;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   FOUR PANEL FEASIBILITY
+   ========================================================= */
+
+.feasibility-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2mm;
+    margin-top: 3mm;
+}
+
+.feasibility-card {
+    border: 0.3mm solid var(--border);
+    border-radius: 2mm;
+    padding: 3mm;
+    background: #fbfdfe;
+}
+
+.feasibility-card h4 {
+    margin: 0 0 1.5mm;
+    color: var(--teal);
+    font-size: 3mm;
+}
+
+.feasibility-card p,
+.feasibility-card li {
+    font-size: 2.65mm;
+    line-height: 1.35;
+}
+
+.feasibility-card ul {
+    margin: 0;
+    padding-left: 4mm;
+}
+
+/* =========================================================
+   LIMITATIONS
+   ========================================================= */
+
+.limitations {
+    border-left: 1.5mm solid #d78b35;
+    background: #fff9f1;
+    padding: 3mm;
+    border-radius: 2mm;
+}
+
+.limitations li {
+    font-size: 2.9mm;
+    line-height: 1.35;
+    margin-bottom: 1mm;
+}
+
+/* =========================================================
+   RECOMMENDATIONS
+   ========================================================= */
+
+.recommendation-table th {
+    background: var(--teal);
+}
+
+.recommendation-table td {
+    font-size: 2.55mm;
+}
+
+/* =========================================================
+   FUTURE WORK
+   ========================================================= */
+
+.future-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5mm;
+    margin-top: 2mm;
+}
+
+.future {
+    padding: 2mm;
+    border-radius: 1.5mm;
+    background: #f2f5fa;
+    border: 0.3mm solid #d3dce9;
+    font-size: 2.65mm;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* =========================================================
+   CONCLUSION
+   ========================================================= */
+
+.conclusion {
+    background: var(--light-blue);
+    border-left: 1.5mm solid var(--blue);
+    padding: 3.5mm;
+    border-radius: 2mm;
+}
+
+.conclusion p {
+    margin: 0;
+    font-size: 3mm;
+    line-height: 1.45;
+}
+
+/* =========================================================
+   REFERENCES
+   ========================================================= */
+
+.references {
+    font-size: 2.5mm;
+    line-height: 1.35;
+}
+
+.references p {
+    margin: 0 0 1.5mm;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    margin: 0 12mm;
+    padding: 5mm 0;
+    border-top: 0.5mm solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    font-size: 3mm;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.footer-right {
+    font-size: 2.7mm;
+    color: var(--muted);
+}
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+
+    html,
+    body {
+        width: 594mm;
+        height: 841mm;
+        background: white;
+    }
+
+    .poster {
+        margin: 0;
+        box-shadow: none;
+    }
+
+}
+
+/* =========================================================
+   SCREEN PREVIEW
+   ========================================================= */
+
+@media screen {
+
+    .poster {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 5px 30px rgba(0,0,0,.2);
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="poster">
+
+<!-- ======================================================
+     HEADER
+     ====================================================== -->
+
+<header class="header">
+
+    <div class="header-top">
+
+        <div class="header-left">
+
+            <div class="project-label">
+                Completed Capstone Project
+            </div>
+
+            <h1 class="title">
+                MEDLINE RURAL
+            </h1>
+
+            <div class="subtitle">
+                “Medical Supplies. Healthier Tomorrows.”
+            </div>
+
+            <div class="assessment">
+                ICT907 — Assessment 3
+            </div>
+
+        </div>
+
+        <div class="header-badge">
+            SOFTWARE<br>
+            ENGINEERING<br>
+            CAPSTONE
+        </div>
+
+    </div>
+
+
+    <div class="members">
+
+        <div class="member">
+            <strong>Khatijatul Kubra</strong><br>
+            SCI10483
+        </div>
+
+        <div class="member">
+            <strong>Wajahat Ali Khan</strong><br>
+            SCI8653
+        </div>
+
+        <div class="member">
+            <strong>Akashdeep Singh</strong><br>
+            SCI6782
+        </div>
+
+        <div class="member">
+            <strong>Virendra Singh</strong><br>
+            SCI6859
+        </div>
+
+        <div class="member">
+            <strong>Divleen Riar</strong><br>
+            SCI8446
+        </div>
+
+        <div class="member">
+            <strong>Sangam</strong><br>
+            Sci10002
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ======================================================
+     MAIN CONTENT
+     ====================================================== -->
+
+<main class="main">
+
+
+<!-- ======================================================
+     COLUMN 1
+     ====================================================== -->
+
+<section class="column">
+
+
+<!-- PROJECT DESCRIPTION -->
+
+<div class="section">
+
+    <div class="section-title">
+        <span class="section-number">1</span>
+        PROJECT DESCRIPTION
+    </div>
+
+    <div class="subheading">Problem / Context</div>
+
+    <p class="text">
+        [INSERT VERIFIED PROJECT PROBLEM / CONTEXT FROM YOUR REPORT]
+    </p>
+
+    <div class="subheading">Project Aim</div>
+
+    <p class="text">
+        [INSERT VERIFIED AIM FROM YOUR REPORT]
+    </p>
+
+    <div class="subheading">Final Project Scope</div>
+
+    <div class="tags">
+
+        <span class="tag">Inventory</span>
+        <span class="tag">Supply Requests</span>
+        <span class="tag">Triage</span>
+        <span class="tag">Shipments</span>
+        <span class="tag">Vehicles</span>
+        <span class="tag">Drivers</span>
+        <span class="tag">Telemetry</span>
+        <span class="tag">Alerts</span>
+        <span class="tag">Notifications</span>
+        <span class="tag">RBAC</span>
+        <span class="tag">Dashboards</span>
+
+    </div>
+
+    <div class="subheading">Stakeholders / Users</div>
+
+    <ul class="list">
+        <li>Clinic Staff</li>
+        <li>Dispatcher</li>
+        <li>Drivers</li>
+        <li>Administrators</li>
+        <li>Rural healthcare organisations / beneficiaries</li>
+    </ul>
+
+    <div class="subheading">Constraints</div>
+
+    <ul class="list">
+        <li>Telemetry simulated rather than physical IoT hardware</li>
+        <li>Project time constraints</li>
+        <li>Available development infrastructure</li>
+        <li>Limited real-world stakeholder evaluation</li>
+        <li>Limited production-scale infrastructure</li>
+    </ul>
+
+</div>
+
+
+<!-- ASSESSMENT 2 TO 3 -->
+
+<div class="section">
+
+    <div class="section-title">
+        Assessment 2 → Assessment 3
+    </div>
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Original Baseline</th>
+                    <th>Completed Implementation</th>
+                    <th>Changes / Limitations</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>[VERIFY]</td>
+                    <td>[VERIFY]</td>
+                    <td>[VERIFY]</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <p class="text small muted" style="margin-top:2mm;">
+        Final scope was implemented and refined from the approved
+        Assessment 2 baseline; material changes should be verified
+        against the Assessment 2 proposal.
+    </p>
+
+</div>
+
+
+<!-- PROJECT GOALS -->
+
+<div class="section">
+
+    <div class="section-title">
+        <span class="section-number">2</span>
+        PROJECT GOALS
+    </div>
+
+    <div class="subheading">Overall Aim</div>
+
+    <p class="text">
+        [INSERT VERIFIED AIM]
+    </p>
+
+    <div class="table-wrap" style="margin-top:3mm;">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Objective</th>
+                    <th>Deliverable</th>
+                    <th>Success Measure</th>
+                    <th>Actual Result</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Digitise inventory</td>
+                    <td>Inventory module</td>
+                    <td>[VERIFY]</td>
+                    <td>[VERIFY]</td>
+                    <td><span class="status">ACHIEVED</span></td>
+                </tr>
+
+                <tr>
+                    <td>Supply requests</td>
+                    <td>Request workflow</td>
+                    <td>[VERIFY]</td>
+                    <td>[VERIFY]</td>
+                    <td><span class="status">ACHIEVED</span></td>
+                </tr>
+
+                <tr>
+                    <td>Explainable triage</td>
+                    <td>Urgency scoring</td>
+                    <td>[VERIFY]</td>
+                    <td>[VERIFY]</td>
+                    <td><span class="status">ACHIEVED</span></td>
+                </tr>
+
+                <tr>
+                    <td>Shipment management</td>
+                    <td>Shipment workflow</td>
+                    <td>[VERIFY]</td>
+                    <td>[VERIFY]</td>
+                    <td><span class="status">ACHIEVED</span></td>
+                </tr>
+
+                <tr>
+                    <td>Telemetry / cold-chain</td>
+                    <td>Telemetry + alerts</td>
+                    <td>[VERIFY]</td>
+                    <td>[VERIFY]</td>
+                    <td><span class="status">ACHIEVED</span></td>
+                </tr>
+
+                <tr>
+                    <td>RBAC / security</td>
+                    <td>Protected system</td>
+                    <td>[VERIFY]</td>
+                    <td>[VERIFY]</td>
+                    <td><span class="status">ACHIEVED</span></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<!-- TRIAGE -->
+
+<div class="section">
+
+    <div class="section-title">
+        TRIAGE / PRIORITISATION
+    </div>
+
+    <div class="formula-box">
+
+        <div class="formula-title">
+            IMPLEMENTED URGENCY SCORE
+        </div>
+
+        <div class="formula">
+            Urgency Score =
+            (Criticality × 0.5)
+            +
+            (Stock-Out Risk × 0.3)
+            +
+            (Transit Risk × 0.2)
+        </div>
+
+    </div>
+
+    <p class="text" style="margin-top:3mm;">
+        The implemented scoring mechanism uses weighted factors
+        to provide an explainable method for prioritising supply
+        requests.
+    </p>
+
+</div>
+
+
+</section>
+
+
+<!-- ======================================================
+     COLUMN 2
+     ====================================================== -->
+
+<section class="column">
+
+
+<!-- METHODOLOGY -->
+
+<div class="section">
+
+    <div class="section-title">
+        <span class="section-number">3</span>
+        METHODOLOGY & IMPLEMENTATION
+    </div>
+
+    <div class="workflow">
+
+        <div class="workflow-step">Requirements</div>
+        <div class="workflow-arrow">↓</div>
+
+        <div class="workflow-step">System Design</div>
+        <div class="workflow-arrow">↓</div>
+
+        <div class="workflow-step">Database Design</div>
+        <div class="workflow-arrow">↓</div>
+
+        <div class="workflow-step">Backend / API Development</div>
+        <div class="workflow-arrow">↓</div>
+
+        <div class="workflow-step">Frontend Development</div>
+        <div class="workflow-arrow">↓</div>
+
+        <div class="workflow-step">Integration</div>
+        <div class="workflow-arrow">↓</div>
+
+        <div class="workflow-step">Security Implementation</div>
+        <div class="workflow-arrow">↓</div>
+
+        <div class="workflow-step">Testing</div>
+        <div class="workflow-arrow">↓</div>
+
+        <div class="workflow-step">Deployment</div>
+        <div class="workflow-arrow">↓</div>
+
+        <div class="workflow-step">Evaluation</div>
+
+    </div>
+
+    <div class="subheading">Agile / Project Control</div>
+
+    <div class="tags">
+        <span class="tag">Backlog</span>
+        <span class="tag">Prioritisation</span>
+        <span class="tag">Coordination</span>
+        <span class="tag">Iteration</span>
+        <span class="tag">Review</span>
+        <span class="tag">Defect Management</span>
+        <span class="tag">Change Management</span>
+        <span class="tag">Integration</span>
+    </div>
+
+</div>
+
+
+<!-- ARCHITECTURE -->
+
+<div class="section">
+
+    <div class="section-title">
+        SYSTEM ARCHITECTURE
+    </div>
+
+    <div class="architecture">
+
+        <div class="arch-box arch-users">
+            ADMIN · DISPATCHER · DRIVER · CLINIC STAFF
+        </div>
+
+        <div class="arch-arrow">↓</div>
+
+        <div class="arch-box arch-front">
+            ROLE-BASED WEB DASHBOARDS
+        </div>
+
+        <div class="arch-arrow">↓</div>
+
+        <div class="arch-box arch-front">
+            HTML / CSS / JAVASCRIPT<br>
+            Bootstrap / Tailwind
+        </div>
+
+        <div class="arch-arrow">↓</div>
+
+        <div class="arch-box arch-api">
+            PHP REST-STYLE APIs
+        </div>
+
+        <div class="arch-arrow">↓</div>
+
+        <div class="arch-box arch-logic">
+            Authentication · Validation<br>
+            Business Logic · RBAC
+        </div>
+
+        <div class="arch-arrow">↓</div>
+
+        <div class="arch-box arch-logic">
+            PDO
+        </div>
+
+        <div class="arch-arrow">↓</div>
+
+        <div class="arch-box arch-db">
+            MySQL DATABASE
+        </div>
+
+    </div>
+
+    <p class="text small muted" style="margin-top:3mm;">
+        Figure 1. MedLine Rural system architecture.
+    </p>
+
+</div>
+
+
+<!-- TELEMETRY -->
+
+<div class="section">
+
+    <div class="section-title">
+        TELEMETRY FLOW
+    </div>
+
+    <div class="telemetry">
+
+        <div class="telemetry-box">DRIVER</div>
+        <div class="telemetry-box">TELEMETRY API</div>
+        <div class="telemetry-box">VALIDATION</div>
+        <div class="telemetry-box">DATABASE</div>
+        <div class="telemetry-box">TEMPERATURE MONITORING</div>
+        <div class="telemetry-box">ALERT</div>
+        <div class="telemetry-box">DASHBOARD</div>
+        <div class="telemetry-box">NOTIFICATION</div>
+
+    </div>
+
+    <p class="text small" style="margin-top:3mm;">
+        Telemetry is simulated through the web/API system and
+        is not connected to physical IoT hardware.
+    </p>
+
+</div>
+
+
+<!-- TECHNOLOGY -->
+
+<div class="section">
+
+    <div class="section-title">
+        TECHNOLOGY STACK
+    </div>
+
+    <div class="tech-grid">
+
+        <div class="tech">PHP</div>
+        <div class="tech">MySQL</div>
+        <div class="tech">PDO</div>
+
+        <div class="tech">REST APIs</div>
+        <div class="tech">HTML</div>
+        <div class="tech">CSS</div>
+
+        <div class="tech">JavaScript</div>
+        <div class="tech">Bootstrap</div>
+        <div class="tech">Tailwind CSS</div>
+
+        <div class="tech">XAMPP</div>
+        <div class="tech">phpMyAdmin</div>
+        <div class="tech">InfinityFree</div>
+
+    </div>
+
+</div>
+
+
+<!-- SECURITY -->
+
+<div class="section">
+
+    <div class="section-title">
+        CYBERSECURITY / PRIVACY
+    </div>
+
+    <div class="security-grid">
+
+        <div class="security-item">Authentication</div>
+        <div class="security-item">RBAC</div>
+
+        <div class="security-item">Protected APIs</div>
+        <div class="security-item">Session Management</div>
+
+        <div class="security-item">Session ID Regeneration</div>
+        <div class="security-item">HTTP-only / SameSite</div>
+
+        <div class="security-item">Prepared SQL</div>
+        <div class="security-item">Input Validation</div>
+
+        <div class="security-item">Secure Errors</div>
+        <div class="security-item">SQL Injection Protection</div>
+
+        <div class="security-item">XSS Protection</div>
+        <div class="security-item">IDOR Testing</div>
+
+        <div class="security-item">HTTP 401</div>
+        <div class="security-item">HTTP 403</div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+<!-- ======================================================
+     COLUMN 3
+     ====================================================== -->
+
+<section class="column">
+
+
+<!-- RESULTS -->
+
+<div class="section">
+
+    <div class="section-title">
+        <span class="section-number">4</span>
+        RESULTS & EVALUATION
+    </div>
+
+    <div class="result-box">
+
+        <div class="result-title">
+            COMPLETED END-TO-END EVALUATION
+        </div>
+
+        <p>
+            REQUEST → TRIAGE → APPROVAL → SHIPMENT →
+            DRIVER/VEHICLE ASSIGNMENT → DISPATCH →
+            TELEMETRY → UNSAFE TEMPERATURE ALERT →
+            ALERT RESOLUTION → DELIVERY →
+            INVENTORY REPLENISHMENT
+        </p>
+
+    </div>
+
+    <div class="subheading">
+        Testing / Evaluation Summary
+    </div>
+
+    <div class="test-grid">
+
+        <div class="test">Functional ✓</div>
+        <div class="test">API ✓</div>
+        <div class="test">Database ✓</div>
+
+        <div class="test">RBAC ✓</div>
+        <div class="test">Security ✓</div>
+        <div class="test">Integration ✓</div>
+
+        <div class="test">End-to-End ✓</div>
+        <div class="test">Cold-Chain ✓</div>
+        <div class="test">Live Deployment ✓</div>
+
+    </div>
+
+    <div class="subheading">
+        Deliverables & Results
+    </div>
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Deliverable</th>
+                    <th>Actual Result</th>
+                    <th>Evidence</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Inventory</td>
+                    <td>[VERIFY]</td>
+                    <td>System screenshot</td>
+                </tr>
+
+                <tr>
+                    <td>Supply Requests</td>
+                    <td>[VERIFY]</td>
+                    <td>System screenshot</td>
+                </tr>
+
+                <tr>
+                    <td>Shipments</td>
+                    <td>[VERIFY]</td>
+                    <td>System screenshot</td>
+                </tr>
+
+                <tr>
+                    <td>Telemetry / Alerts</td>
+                    <td>[VERIFY]</td>
+                    <td>System screenshot</td>
+                </tr>
+
+                <tr>
+                    <td>Security / RBAC</td>
+                    <td>[VERIFY]</td>
+                    <td>Testing evidence</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<!-- REAL SCREENSHOTS -->
+
+<div class="section">
+
+    <div class="section-title">
+        REAL PROJECT EVIDENCE
+    </div>
+
+    <div class="evidence-grid">
+
+
+        <!-- SCREENSHOT 1 -->
+
+        <div class="evidence">
+
+            <!-- Replace this div with:
+            <img src="screenshots/inventory.png" alt="Clinic Inventory">
+            -->
+
+            <div class="evidence-placeholder">
+                INSERT REAL MEDLINE RURAL<br>
+                CLINIC INVENTORY SCREENSHOT
+            </div>
+
+            <div class="caption">
+                Figure 3. Clinic inventory and stock-risk monitoring.
+            </div>
+
+        </div>
+
+
+        <!-- SCREENSHOT 2 -->
+
+        <div class="evidence">
+
+            <div class="evidence-placeholder">
+                INSERT REAL MEDLINE RURAL<br>
+                SUPPLY REQUEST + TRIAGE SCREENSHOT
+            </div>
+
+            <div class="caption">
+                Figure 4. Supply request and explainable triage.
+            </div>
+
+        </div>
+
+
+        <!-- SCREENSHOT 3 -->
+
+        <div class="evidence">
+
+            <div class="evidence-placeholder">
+                INSERT REAL MEDLINE RURAL<br>
+                TELEMETRY / COLD-CHAIN ALERT
+            </div>
+
+            <div class="caption">
+                Figure 5. Telemetry and cold-chain alert.
+            </div>
+
+        </div>
+
+
+        <!-- SCREENSHOT 4 -->
+
+        <div class="evidence">
+
+            <div class="evidence-placeholder">
+                INSERT REAL MEDLINE RURAL<br>
+                DELIVERY + INVENTORY REPLENISHMENT
+            </div>
+
+            <div class="caption">
+                Figure 6. Delivery completion and inventory replenishment.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- FEASIBILITY -->
+
+<div class="section">
+
+    <div class="section-title">
+        <span class="section-number">5</span>
+        FEASIBILITY, QUALITY & INNOVATION
+    </div>
+
+    <div class="feasibility-grid">
+
+        <div class="feasibility-card">
+
+            <h4>TECHNICAL FEASIBILITY</h4>
+
+            <ul>
+                <li>PHP/MySQL architecture implemented</li>
+                <li>Frontend/backend/database integrated</li>
+                <li>Functional APIs and dashboards</li>
+                <li>Successful deployment</li>
+                <li>End-to-end workflow demonstrated</li>
+            </ul>
+
+        </div>
+
+
+        <div class="feasibility-card">
+
+            <h4>OPERATIONAL FEASIBILITY</h4>
+
+            <ul>
+                <li>Role-specific workflows</li>
+                <li>Centralised supply management</li>
+                <li>Structured clinic-to-delivery workflow</li>
+                <li>Supports coordinated operations</li>
+            </ul>
+
+        </div>
+
+
+        <div class="feasibility-card">
+
+            <h4>QUALITY & MAINTAINABILITY</h4>
+
+            <ul>
+                <li>Modular API structure</li>
+                <li>RBAC</li>
+                <li>Input validation</li>
+                <li>Prepared SQL</li>
+                <li>Security controls</li>
+                <li>Testing and documentation</li>
+            </ul>
+
+        </div>
+
+
+        <div class="feasibility-card">
+
+            <h4>INNOVATION / DISTINCTIVE VALUE</h4>
+
+            <p>
+                Integrated workflow combining inventory,
+                explainable prioritisation, shipment management,
+                driver operations, telemetry, cold-chain
+                alerting and role-based security.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- LIMITATIONS -->
+
+<div class="section">
+
+    <div class="limitations">
+
+        <div class="section-title" style="margin-bottom:2mm;">
+            LIMITATIONS
+        </div>
+
+        <ul class="list">
+
+            <li>
+                Telemetry is simulated rather than connected
+                to physical IoT sensors.
+            </li>
+
+            <li>
+                No real GPS hardware integration.
+            </li>
+
+            <li>
+                Limited real-world stakeholder validation.
+            </li>
+
+            <li>
+                Limited production-scale infrastructure.
+            </li>
+
+            <li>
+                Broader scalability testing remains future work.
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+
+<!-- RECOMMENDATIONS -->
+
+<div class="section">
+
+    <div class="section-title">
+        <span class="section-number">6</span>
+        RECOMMENDATIONS & CONTRIBUTION
+    </div>
+
+    <div class="table-wrap">
+
+        <table class="recommendation-table">
+
+            <thead>
+
+                <tr>
+                    <th>Finding</th>
+                    <th>Recommendation</th>
+                    <th>Next Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>
+                        Telemetry uses simulated data.
+                    </td>
+
+                    <td>
+                        Integrate physical temperature
+                        and GPS sensors.
+                    </td>
+
+                    <td>
+                        Connect IoT hardware through
+                        a secure telemetry gateway.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Validation was performed within
+                        the project environment.
+                    </td>
+
+                    <td>
+                        Conduct broader stakeholder
+                        validation.
+                    </td>
+
+                    <td>
+                        Pilot with rural healthcare clinics.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Further production hardening is required.
+                    </td>
+
+                    <td>
+                        Strengthen infrastructure
+                        and operational controls.
+                    </td>
+
+                    <td>
+                        Implement monitoring, backups,
+                        scalability and deployment controls.
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="subheading">
+        Contribution
+    </div>
+
+    <p class="text">
+        MedLine Rural contributes a workflow-oriented approach
+        integrating medical inventory management, supply-request
+        prioritisation, shipment coordination, driver operations,
+        telemetry monitoring, cold-chain alerting and role-based
+        security within one web-based system.
+    </p>
+
+</div>
+
+
+<!-- FUTURE WORK -->
+
+<div class="section">
+
+    <div class="section-title">
+        FUTURE WORK
+    </div>
+
+    <div class="future-grid">
+
+        <div class="future">Physical IoT Sensors</div>
+        <div class="future">GPS Hardware</div>
+        <div class="future">SMS / WhatsApp</div>
+
+        <div class="future">Advanced Analytics</div>
+        <div class="future">Mobile Application</div>
+        <div class="future">Demand Forecasting</div>
+
+        <div class="future">Multi-Region Deployment</div>
+        <div class="future">Stakeholder Validation</div>
+        <div class="future">Production Hardening</div>
+
+        <div class="future">Scalability Testing</div>
+
+    </div>
+
+</div>
+
+
+<!-- CONCLUSION -->
+
+<div class="section">
+
+    <div class="section-title">
+        CONCLUSION
+    </div>
+
+    <div class="conclusion">
+
+        <p>
+            [INSERT YOUR VERIFIED FINAL CONCLUSION FROM THE REPORT.
+            KEEP THIS SECTION CONCISE AND EVIDENCE-BASED.]
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- REFERENCES -->
+
+<div class="section">
+
+    <div class="section-title">
+        <span class="section-number">7</span>
+        REFERENCES
+    </div>
+
+    <div class="references">
+
+        <p>
+            [INSERT VERIFIED APA 7 REFERENCE 1]
+        </p>
+
+        <p>
+            [INSERT VERIFIED APA 7 REFERENCE 2]
+        </p>
+
+        <p>
+            [INSERT VERIFIED APA 7 REFERENCE 3]
+        </p>
+
+        <p>
+            [INSERT VERIFIED APA 7 REFERENCE 4]
+        </p>
+
+    </div>
+
+    <p class="text small muted" style="margin-top:2mm;">
+        Use only genuine sources used in the project/report.
+        Retain the complete APA 7 reference list in the written report
+        if the full list cannot fit legibly on the A1 poster.
+    </p>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-left">
+        MEDLINE RURAL — Medical Supplies. Healthier Tomorrows.
+    </div>
+
+    <div class="footer-right">
+        ICT907 — Assessment 3 · Completed Capstone Project
+    </div>
+
+</footer>
+
+
+</div>
+
+</body>
+</html>
